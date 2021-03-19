@@ -34,6 +34,16 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.mt6762 \
+    fstab.mt6765
+
+# Fstab
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/fstab.mt6762:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6762 \
+    $(DEVICE_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
